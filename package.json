@@ -1,0 +1,16 @@
+{
+  "name": "auto_upload_documentation",
+  "version": "1.0.0",
+  "description": "automatically upload all documentation files from Microsoft Teams Onedive to Gitlab documentation folder",
+  "main": "auto_upload_documentation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node auto_upload_documentation.js"
+  },
+  "author": "Tim van de Ven",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "simple-git": "^1.131.0"
+  }
+}
