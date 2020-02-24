@@ -3,6 +3,10 @@ require('dotenv').config();
 
 var date = new Date();
 
+//path to the Onedrive directory containing all the documents
+//when using a shared folder in VMware it's located in /mnt/hgfs/
+const PATH_TO_ONEDRIVE_DOCS = "/mnt/hgfs/Onedrive/doc"
+
 //github credentials and repo information
 const USER = process.env.GITHUB_USERNAME;
 const PASS = process.env.GITHUB_PASSWORD;
@@ -48,7 +52,7 @@ git.checkIsRepo()
     .then(isRepo => !isRepo && initialiseRepo(git))
     .then(() => git.pull(remote, "master"))
     .catch((err) => console.error('failed: ', err))
-    .then(() => exec('mkdir -p ' + REPO_NAME + '/doc && cp -r Onedrive_link/* ' + REPO_NAME + '/doc', (err, stdout) => {
+    .then(() => exec('mkdir -p ' + REPO_NAME + '/doc && cp -r '+ PATH_TO_ONEDRIVE_DOCS +'/* ' + REPO_NAME + '/doc', (err, stdout) => {
         if (err) {
             //some err occurred
             console.error(err)
