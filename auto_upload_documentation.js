@@ -11,8 +11,8 @@ const PATH_TO_ONEDRIVE_DOCS = "/mnt/hgfs/Onedrive/doc"
 const USER = process.env.GITHUB_USERNAME;
 const PASS = process.env.GITHUB_PASSWORD;
 
-const REPO_NAME = 'input_repo_name'
-const REPO_LINK = `github.com/input_username_of_git_repo/${REPO_NAME}.git`;
+const REPO_NAME = process.env.REPO_NAME;
+const REPO_LINK = process.env.REPO_LINK;
 
 //check if all required fields are setup by the user
 if (USER == 'input_your_username_here' ||
