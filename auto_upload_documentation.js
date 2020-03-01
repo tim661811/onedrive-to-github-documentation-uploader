@@ -5,7 +5,7 @@ var date = new Date();
 
 //path to the Onedrive directory containing all the documents
 //when using a shared folder in VMware it's located in /mnt/hgfs/
-const PATH_TO_ONEDRIVE_DOCS = "/mnt/hgfs/Onedrive/doc"
+const PATH_TO_ONEDRIVE_DOCS = "/mnt/hgfs/Onedrive/doc";
 
 //github credentials and repo information
 const USER = process.env.GITHUB_USERNAME;
@@ -47,7 +47,7 @@ function initialiseRepo(git) {
         .catch((err) => console.error('failed: ', err));
 }
 
-main structure which handles the pull (for being up to date), and pushing the new documentation
+//main structure which handles the pull (for being up to date), and pushing the new documentation
 git.checkIsRepo()
     .then(isRepo => !isRepo && initialiseRepo(git))
     .then(() => git.pull(remote, "master"))
