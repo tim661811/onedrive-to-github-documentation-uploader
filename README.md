@@ -11,3 +11,5 @@ REPO_NAME=__input_repo_name__<br/>
 REPO_LINK=github.com/__input_username_of_git_repo__/__input_repo_name__.git
 
 3. Map your onedrive directory containing all you documents to `/mnt/hgfs/Onedrive/doc`. This will make shure the docker container is able to see the documents.
+
+NOTE: you may have to run the container twice on the first use
