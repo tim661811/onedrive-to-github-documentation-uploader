@@ -21,7 +21,8 @@ ENV GITHUB_USERNAME=input_your_username_here \
 	REPO_NAME=input_repo_name \
 	REPO_LINK=github.com/input_username_of_git_repo/${REPO_NAME}.git
 
-CMD ["rm","-rf",".git",".gitignore"]
-CMD ["git", "config", "--global", "user.email", "documentation@uploader.bot"]
-CMD ["git", "config", "--global", "user.name", "documentation_uploader_bot"]
+RUN rm -rf .git .gitignore
+RUN git config --global user.email documentation@uploader.bot
+RUN git config --global user.name documentation_uploader_bot
+
 CMD [ "npm", "start" ]
