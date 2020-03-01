@@ -47,7 +47,7 @@ function initialiseRepo(git) {
         .catch((err) => console.error('failed: ', err));
 }
 
-main structure which handles the pull (for being up to date), and pushing the new documentation
+//main structure which handles the pull (for being up to date), and pushing the new documentation
 git.checkIsRepo()
     .then(isRepo => !isRepo && initialiseRepo(git))
     .then(() => git.pull(remote, "master"))
