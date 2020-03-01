@@ -18,7 +18,7 @@ const REPO_LINK = process.env.REPO_LINK;
 if (USER == 'input_your_username_here' ||
     PASS == 'input_your_password_here' ||
     REPO_NAME == 'input_repo_name' ||
-    REPO_LINK.contains("input_username_of_git_repo")) {
+    REPO_LINK.indexOf("input_username_of_git_repo") != -1) {
 
     console.error("One of the following variables aren't setup: USER, PASS, REPO_NAME, REPO_LINK")
     process.exit();
