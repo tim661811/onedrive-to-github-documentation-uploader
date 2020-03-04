@@ -47,12 +47,16 @@ function initialiseRepo(git) {
         .catch((err) => console.error('failed setting up the git repo: ', err));
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 //main structure which handles the pull (for being up to date), and pushing the new documentation
 git.checkIsRepo()
     .then(isRepo => !isRepo && initialiseRepo(git))
     .then(() => git.pull(remote, "master"))
     .catch((err) => console.error('failed pulling: ', err))
-    .then(() => exec('mkdir -p ' + REPO_NAME + '/doc && cp -r '+ PATH_TO_ONEDRIVE_DOCS +'/* ' + REPO_NAME + '/doc', (err, stdout) => {
+    .then(() => exec('mkdir -p ' + REPO_NAME + '/doc && cp -r ' + PATH_TO_ONEDRIVE_DOCS + '/* ' + REPO_NAME + '/doc', (err, stdout) => {
         if (err) {
             //some err occurred
             console.error(err)
@@ -61,6 +65,9 @@ git.checkIsRepo()
             console.log(`${stdout}`);
         }
     }))
-    .then(() => git.add('./*'))
-    .then(() => git.commit("Documentation commit " + date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear()))
-    .then(() => git.push())
+    .then(() => {
+        sleep(5000)
+            .then(() => git.add('./*'))
+            .then(() => git.commit("Documentation commit " + date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear()))
+            .then(() => git.push())
+    });
