@@ -9,6 +9,10 @@
   },
   "author": "Tim van de Ven",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tim661811/onedrive-to-github-documentation-uploader.git"
+  },
   "dependencies": {
     "dotenv": "^8.2.0",
     "simple-git": "^1.131.0"
