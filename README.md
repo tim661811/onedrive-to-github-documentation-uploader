@@ -27,7 +27,7 @@ __NOTE:__ you may have to run the container twice on the first use
 `GITHUB_USERNAME=input_your_username_here`<br/>
 `GITHUB_PASSWORD=input_your_password_here`<br/>
 `REPO_NAME=input_repo_name`<br/>
-`REPO_LINK=github.com/input_username_of_git_repo/input_repo_name.git`
+`REPO_LINK=github.com/input_username_of_git_repo/input_repo_name.git`<br/>
 Change the text after the '=' signs to reflect you settings.
 
 4. Change the PATH_TO_ONEDRIVE_DOCS variable to the path of the directory containing all your documentation.
